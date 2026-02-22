@@ -18,92 +18,104 @@ export default function CTA() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-slate-50/30">
       <div
         ref={ref}
         className={cn(
-          "max-w-4xl mx-auto relative overflow-hidden rounded-[2.5rem] transition-all duration-700",
-          isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          "max-w-5xl mx-auto relative overflow-hidden rounded-[3rem] transition-all duration-1000 ease-out border border-slate-800 shadow-2xl shadow-slate-900/40",
+          isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         )}
       >
-        {/* Background with texture */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
-        <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2314b8a6' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        {/* Deep, refined background */}
+        <div className="absolute inset-0 bg-[#0B1221]" />
+        
+        {/* Subtle Grid Pattern from image */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 19h2v2h-2z' fill='%23ffffff' fill-opacity='1'/%3E%3C/svg%3E")`,
         }} />
-        
-        {/* Accent shapes */}
-        <div className="absolute -top-32 -right-32 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
-        
-        {/* Side accent bar */}
-        <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-teal-400 to-transparent" />
 
-        {/* Content */}
-        <div className="relative px-8 py-14 md:px-14 md:py-16 lg:px-20">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-500/10 rounded-full border border-teal-500/20 mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-              <span className="text-xs text-teal-300 font-medium uppercase tracking-wider">
+        {/* Dynamic Light Effects */}
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px]" />
+        
+        {/* Precise left edge glow like image */}
+        <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-teal-400/40 to-transparent shadow-[4px_0_20px_rgba(20,184,166,0.3)]" />
+
+        {/* Content Container */}
+        <div className="relative px-8 py-16 md:px-16 md:py-20 lg:px-24 flex flex-col items-center sm:items-start">
+          <div className="max-w-2xl w-full">
+            {/* Tag/Badge inspired by image */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-teal-950/40 rounded-full border border-teal-500/30 mb-8 backdrop-blur-sm group hover:border-teal-500/50 transition-colors cursor-default">
+              <Sparkles className="w-4 h-4 text-teal-400 transition-transform group-hover:rotate-12" />
+              <span className="text-[11px] text-teal-300 font-bold uppercase tracking-[0.2em]">
                 Free to get started
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">
+            {/* Typography refined for high-end look */}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.15] tracking-tight">
               Start managing your practice
-              <span className="block text-teal-400">the smarter way.</span>
+              <span className="block mt-1 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                the smarter way.
+              </span>
             </h2>
 
-            <p className="text-base text-slate-400 mb-8 leading-relaxed max-w-lg">
+            <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-xl font-medium opacity-90">
               Join healthcare professionals who save 10+ hours every week. 
               No credit card needed to start your free trial.
             </p>
 
             {submitted ? (
-              <div className="flex items-center gap-3 p-4 bg-teal-500/10 rounded-xl border border-teal-500/20">
-                <CheckCircle className="w-5 h-5 text-teal-400 shrink-0" />
-                <p className="text-teal-300 text-sm">Thanks! We&apos;ll be in touch within 24 hours.</p>
+              <div className="flex items-center gap-4 p-6 bg-teal-500/5 rounded-2xl border border-teal-500/20 backdrop-blur-md animate-in fade-in zoom-in duration-500">
+                <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center shadow-lg shadow-teal-500/20">
+                  <CheckCircle className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-white font-semibold">Success!</p>
+                  <p className="text-teal-300/80 text-sm">We&apos;ll be in touch with your access details.</p>
+                </div>
               </div>
             ) : (
               <form 
-                className="flex flex-col sm:flex-row gap-3 mb-6"
+                className="flex flex-col sm:flex-row gap-4 mb-10 w-full"
                 onSubmit={handleSubmit}
               >
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your work email"
-                  required
-                  aria-label="Email address"
-                  suppressHydrationWarning
-                  className="flex-1 px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-400/50 focus:border-teal-400/50 focus:bg-white/10 transition-all text-sm"
-                />
+                <div className="relative flex-1 group">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your work email"
+                    required
+                    aria-label="Email address"
+                    suppressHydrationWarning
+                    className="w-full px-6 py-4.5 rounded-2xl bg-[#131B2D] border border-slate-700/50 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-500/40 transition-all text-base shadow-inner group-hover:border-slate-600/50"
+                  />
+                </div>
                 <Button
                   type="submit"
                   variant="primary"
-                  size="md"
-                  className="whitespace-nowrap shadow-lg shadow-teal-500/20"
+                  size="lg"
+                  className="px-8 py-4.5 rounded-2xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold flex items-center justify-center gap-2 group shadow-xl shadow-teal-500/20 active:scale-[0.98] transition-all"
                 >
                   Get Early Access
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </form>
             )}
 
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-500">
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-                14-day free trial
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-                No setup fees
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-                Cancel anytime
-              </span>
+            {/* Checklist from image */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-sm font-medium text-slate-500">
+              {[
+                "14-day free trial",
+                "No setup fees",
+                "Cancel anytime"
+              ].map((item, id) => (
+                <div key={id} className="flex items-center gap-2.5 group cursor-default">
+                  <span className="w-2 h-2 bg-teal-500 rounded-full shadow-[0_0_8px_rgba(20,184,166,0.6)] group-hover:scale-125 transition-transform" />
+                  <span className="group-hover:text-slate-400 transition-colors uppercase text-[10px] tracking-widest font-bold">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from "lucide-react";
 import { FOOTER_LINKS } from "@/lib/constants";
-import { scrollToSection } from "@/lib/utils";
+import { scrollToSection, cn } from "@/lib/utils";
 
 export default function Footer() {
   const handleNavClick = (href: string) => {
